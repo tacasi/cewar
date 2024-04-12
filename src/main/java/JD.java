@@ -8,7 +8,7 @@ public class JD {
 	}
 	public static String process() throws Exception {
 		Class.forName("com.ibm.db2.jcc.DB2Driver");
-		Connection con = DriverManager.getConnection("jdbc:db2://6667d8e9-9d4d-4ccb-ba32-21da3bb5aafc.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud:30376/bludb:sslConnection=true;", "mrx02930", "TCYnbKhHDcoNAFiM");
+		Connection con = DriverManager.getConnection("jdbc:db2://2f3279a5-73d1-4859-88f0-a6c3e6b4b907.c3n41cmd0nqnrk39u98g.databases.appdomain.cloud:30756/bludb:sslConnection=true;", "frs79418", "rRR4CH9BGQcBmLgs");
 		try {
 		return con.getMetaData().getDatabaseProductName() + con.getMetaData().getDatabaseProductVersion();
 		} finally {
