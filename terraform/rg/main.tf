@@ -7,5 +7,7 @@ terraform {
 }
 
 resource "ibm_resource_group" "resourceGroup" {
-  name     = "rg-mytest"
+  for_each = toset(var.user_list)
+  name     = "rg-${each.value.name}"
 }
+
