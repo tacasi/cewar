@@ -6,13 +6,13 @@ data "ibm_resource_group" "rg" {
 resource "ibm_cr_namespace" "namespace" {
   for_each = data.ibm_resource_group.rg
 
-  name              = "wap2024-cr-${replace(each.value.name, "/^rg-/", "")}"
+  name              = "wap2024-cr-${replace(each.value.name, "/^wap2024-rg-/", "")}"
   resource_group_id = each.value.id
 }
 
 resource "ibm_cr_retention_policy" "cr_retention_policy" {
   for_each = data.ibm_resource_group.rg
-  namespace = "wap2024-cr-${replace(each.value.name, "/^rg-/", "")}"
+  namespace = "wap2024-cr-${replace(each.value.name, "/^wap2024-rg-/", "")}"
 
   images_per_repo = 2
   retain_untagged = false
