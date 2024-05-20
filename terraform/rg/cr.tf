@@ -11,8 +11,8 @@ resource "ibm_cr_namespace" "namespace" {
 }
 
 resource "ibm_cr_retention_policy" "cr_retention_policy" {
-  for_each = data.ibm_resource_group.rg
-  namespace = "wap2024-cr-${replace(each.value.name, "/^wap2024-rg-/", "")}"
+  for_each = data.ibm_cr_namespace.namespace
+  namespace = "${each.value.name}"
 
   images_per_repo = 2
   retain_untagged = false
