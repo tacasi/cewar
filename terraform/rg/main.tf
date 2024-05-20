@@ -8,6 +8,6 @@ terraform {
 
 resource "ibm_resource_group" "resourceGroup" {
   for_each = toset(var.user_list)
-  name     = "rg-${each.value.name}"
+  name     = "rg-${each.value}"
 }
 
